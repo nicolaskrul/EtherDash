@@ -1,0 +1,41 @@
+.header {
+    background-color: #242424;
+    border-bottom: 1px solid #242424;
+    height: 3em;
+    margin:auto;
+}
+
+.menu {
+
+    margin: .5em auto;
+    width:100%;
+}
+.nav ul {
+
+}
+
+a.nav-link {
+    color:#389AF3;
+    margin: .5em auto;
+}
+
+a.nav-link:hover,
+a.nav-link:active {
+    border-bottom:1px solid #389AF3;
+    font-weight:bold;
+}
+
+.card-container{
+    margin: 0.25em;
+}
+
+.card-content{
+    background-color: #242424;
+    padding:0.5em;
+}
+
+.card-titlebar{
+    background-color: #242424;
+    height:2em;
+    padding:0.1em 0.5em;
+}
