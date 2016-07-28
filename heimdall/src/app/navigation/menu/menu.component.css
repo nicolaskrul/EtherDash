@@ -1,21 +1,22 @@
 .menu {
-    margin: .5em auto;
-    width:100%;
+
+
 }
 
-.nav ul {
-
+.nav  {
+    margin-top:-1em;
+    padding:1em;
+    height:3em;
 }
 
 a.nav-link {
     color:#389AF3;
     cursor:pointer;
-    margin: .5em auto;
 }
 
 a.nav-link:hover,
 a.nav-link:active {
-    background-color: #A0A0A0;
+    background-color: #313032;
     border-bottom:1px solid #389AF3;
     color:#389AF3;
     font-weight:bold;

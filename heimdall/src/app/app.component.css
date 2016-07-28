@@ -3,20 +3,9 @@
     border-bottom: 1px solid #242424;
     height: 3em;
     margin:auto;
+    margin-bottom:1.5em;
 }
 
-
-.card-container{
-    margin: 0.25em;
-}
-
-.card-content{
-    background-color: #242424;
-    padding:0.5em;
-}
-
-.card-titlebar{
-    background-color: #242424;
-    height:2em;
-    padding:0.1em 0.5em;
+dashboard{
+    margin:auto;
 }
