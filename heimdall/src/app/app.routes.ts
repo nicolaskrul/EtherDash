@@ -5,7 +5,7 @@ import {ProfileComponent} from './profile/profile.component';
 
 const routes: RouterConfig = [
   { path: 'profile', component: ProfileComponent },
-  { path: '*', component: LandingspageComponent }
+  { path: 'landingspage', component: LandingspageComponent }
   ];
 
   export const RouterProviders = [
