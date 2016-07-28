@@ -1,20 +1,19 @@
 
 .card-container{
-
-    margin: 0.25em;
+    margin: 0.25em 0.25em 1.5em 0.25em;
     width:100%;
 }
 
 .card-titlebar{
-    background-color: #242424;
-    border-top:1px solid #656664;
-    height:2em;
+    background-color: #D0D0D0;
+    border-bottom:3px solid #656664;
+    height:1.25em;
     padding:0.1em 0.5em;
     width:100%;
 }
 
 .card-content{
     background-color: #242424;
-    
+    padding:1.5em;
     width:100%;
 }
