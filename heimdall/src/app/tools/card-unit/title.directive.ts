@@ -1,10 +1,11 @@
-import { Directive, ElementRef, Input } from '@angular/core';
-
-@Directive({ selector: '[title]' })
-export class cardTitle {
-    private cardUnitTitle = "";
-    constructor(title: string) {
-       this.cardUnitTitle = title;
-
-    }
-}
+// import { Directive, Input } from '@angular/core';
+//
+// @Directive({ selector: '[cardTitle]' })
+// export class cardTitle {
+//
+//
+//
+//     constructor() {
+//
+//     }
+// }

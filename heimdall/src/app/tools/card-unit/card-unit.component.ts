@@ -5,11 +5,13 @@ import { Component, Input } from '@angular/core';
   selector: 'card-unit',
   templateUrl: 'card-unit.component.html',
   styleUrls: ['card-unit.component.css'],
-  inputs:[ 'cardTitle' ]
+  inputs:['cardTitle']
 })
 export class CardUnitComponent {
 
-    @Input('cardTitle') title: string;
-
+    public title;
+    ngOnInit() {
+        title : this.cardTitle;
+    };
 
 }

@@ -15,9 +15,42 @@
     "target": "es5",
     "inlineSources": true
   },
-
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**"
+  ],
   "files": [
+    "app/app.component.spec.ts",
+    "app/app.component.ts",
+    "app/app.routes.ts",
+    "app/cards/cards.component.spec.ts",
+    "app/cards/cards.component.ts",
+    "app/cards/index.ts",
+    "app/dashboard/dashboard.component.spec.ts",
+    "app/dashboard/dashboard.component.ts",
+    "app/dashboard/index.ts",
+    "app/environment.ts",
+    "app/index.ts",
+    "app/landingspage/index.ts",
+    "app/landingspage/landingspage.component.spec.ts",
+    "app/landingspage/landingspage.component.ts",
+    "app/navigation/menu/index.ts",
+    "app/navigation/menu/menu.component.spec.ts",
+    "app/navigation/menu/menu.component.ts",
+    "app/profile/index.ts",
+    "app/profile/profile.component.spec.ts",
+    "app/profile/profile.component.ts",
+    "app/shared/index.ts",
+    "app/tools/card-unit/card-unit.component.spec.ts",
+    "app/tools/card-unit/card-unit.component.ts",
+    "app/tools/card-unit/index.ts",
+    "app/tools/card-unit/title.directive.ts",
     "main.ts",
+    "system-config.ts",
     "typings.d.ts"
-  ]
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }

@@ -8,7 +8,7 @@ const routes: RouterConfig = [
   { path: 'profile', component: ProfileComponent },
   { path: 'landingspage', component: LandingspageComponent },
   {path: 'global', component: DashboardComponent},
-  { path: '', component: LandingspageComponent}
+  { path: '**', component: LandingspageComponent}
   ];
 
   export const RouterProviders = [
