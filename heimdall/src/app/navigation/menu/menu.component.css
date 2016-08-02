@@ -10,14 +10,14 @@
 }
 
 a.nav-link {
-    color:#389AF3;
+    color:#BBC4CF;
     cursor:pointer;
 }
 
 a.nav-link:hover,
 a.nav-link:active {
-    background-color: #313032;
-    border-bottom:1px solid #389AF3;
-    color:#389AF3;
+
+    border-bottom:1px solid #FFFFFF;
+    color:#FFFFFF;
     font-weight:bold;
 }
