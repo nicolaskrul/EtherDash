@@ -1,17 +1,25 @@
 .menu {
-
-
-}
-
-.nav  {
-    margin-top:-1em;
-    padding:1em;
+    display:inline-block;
+    vertical-align:top;
+    float:none;
     height:3em;
 }
 
+.nav .nav-inline  {
+    display:inline-block;
+    vertical-align:top;
+    float:none;
+    margin-top:-1em;
+    padding:1em;
+
+}
+
 a.nav-link {
+
     color:#BBC4CF;
     cursor:pointer;
+    font-size:10pt;
+    font-weight:bold;
 }
 
 a.nav-link:hover,
@@ -19,5 +27,5 @@ a.nav-link:active {
 
     border-bottom:1px solid #FFFFFF;
     color:#FFFFFF;
-    font-weight:bold;
+
 }

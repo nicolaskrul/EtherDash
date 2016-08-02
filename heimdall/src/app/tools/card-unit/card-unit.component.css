@@ -5,19 +5,25 @@
 
 .card-container{
 
-    padding:1em;
+    padding:.5em;
     width:100%;
 }
 
 .card-titlebar{
     background-color: #0A1A29;
-    padding:.5em 1.5em .5em 1.5em;
+    padding:.5em 1.5em 0 1.5em;
     width:100%;
 }
 
 .card-content{
     background-color: #0A1A29;
-
-    padding:1.5em;
+    font-size:10pt;
+    padding:.5em;
     width:100%;
+}
+
+.card-para{
+    background-color: #0A0D11;
+    border: 1px solid #242424;
+    padding:0.7em;
 }
