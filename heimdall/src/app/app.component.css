@@ -1,6 +1,6 @@
 #logo {
     display:inline-block;
-    margin:.3em;
+    margin:.5em 1em .3em .3em;
     width:3em;
     color:#CCCDD2;
     font-size:13pt;
@@ -9,6 +9,7 @@
     border:3px solid #CCCDD2;
     border-radius:50%;
     padding-right:1px;
+    float:left;
 
 }
 
@@ -18,6 +19,12 @@
     height: 3em;
     width:100%;
     margin-bottom:1.5em;
+    display:inline-block;
+}
+
+.header-container{
+    width:100%;
+    display:inline-block;
 }
 
 dashboard{
