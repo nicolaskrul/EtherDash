@@ -42,6 +42,7 @@ const barrels: string[] = [
   'app/landingspage',
   'app/dashboard',
   'app/tools/card-unit',
+  'app/login',
   /** @cli-barrel */
 ];
 
