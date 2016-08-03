@@ -10,5 +10,5 @@ import { MenuComponent} from './navigation/menu/menu.component'
   directives: [ROUTER_DIRECTIVES, MenuComponent]
 })
 export class Dashboard {
-  title = 'app works!';
+  
 }
