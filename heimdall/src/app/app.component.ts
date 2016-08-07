@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MenuComponent} from './navigation/menu/menu.component'
+import { LoginComponent} from './login/login.component'
 
 @Component({
   moduleId: module.id,
@@ -10,5 +11,5 @@ import { MenuComponent} from './navigation/menu/menu.component'
   directives: [ROUTER_DIRECTIVES, MenuComponent]
 })
 export class Dashboard {
-  
+
 }
