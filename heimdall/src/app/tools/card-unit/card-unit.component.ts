@@ -6,9 +6,9 @@ import { Component, Input, ElementRef } from '@angular/core';
   templateUrl: 'card-unit.component.html',
   styleUrls: ['card-unit.component.css']
 })
-export class CardUnitComponent implements AfterContentInit {
-    @Input('card-title') cardTitle;
-    @ViewChild('card-data') ElementRef cardData;
+export class CardUnitComponent {
+    @Input('card-title') cardTitle:string;
+
     public title;
 
     ngOnInit() {
@@ -16,9 +16,5 @@ export class CardUnitComponent implements AfterContentInit {
 
     };
 
-        @override
-        ngAfterContentInit() {
 
-             print(cardData.text);
-        }
 }
