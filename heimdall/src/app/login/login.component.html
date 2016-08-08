@@ -1,12 +1,36 @@
-<card-unit>
-    <div class="card-data">
-        <div class="col-xs-12">
-            <div class="form-control">
-                <label for="username">Login:</label>
-                <input type="text" class="input" name="username" />
-                <label for="username">Password:</label>
-                <input type="text" class="input" name="password" />
-            </div>
-        </div>
+<div class="container">
+    <div class="col-sm-6 col-lg-4 offset-md-4 ">
+        <card-unit id="gate">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="username" class="col-form-label">Username:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="username" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="password" class="col-form-label">Password:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="password"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+                <div class="col-xs 12">
+                    <p>Register for a new account</p>
+                    <a class="btn-primary">Register</a>
+                    <a class="btn-secondary pull-right">Login</a>
+                </div>
+
+
+        </card-unit>
     </div>
-</card-unit>
+</div>

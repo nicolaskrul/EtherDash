@@ -1,14 +1,14 @@
 #logo {
     display:inline-block;
     margin:.5em 1em .3em 0;
-    width:3em;
+    width:2.5em;
     color:#CCCDD2;
-    font-size:13pt;
+    font-size:14pt;
     font-weight:700;
     text-align:center;
     border:3px solid #CCCDD2;
     border-radius:50%;
-    padding-right:1px;
+    padding-left:1px;
     float:left;
 
 }
