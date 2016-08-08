@@ -22,6 +22,13 @@ label {
 
 }
 
+label:hover,
+label:focus,
+label:active  {
+    font-weight:bold;
+    font-color: #ffffff;
+}
+
 input[type=text] {
     width:100% !important;
 
@@ -40,6 +47,12 @@ p {
     width:100%;
     display:inline-block;
 }
+
+.card-footer {
+    background-color: #0A0D11 !important;
+    padding:.5em;
+}
+
 
 .form-group {
     background-color: inherit;
@@ -62,12 +75,11 @@ p {
 .btn-primary,
 .btn-primary-auto {
     background-color: #CCCDD2;
+    border:0;
     border-radius:0;
-    box-sizing: content-box;
     color: #102538 !important;
     padding: .2em .8em;
-    margin: .5em;
-    min-width:100px;
+    min-width:50px;
     font-size:16pt;
     font-style:italic;
     text-align:center;
@@ -89,7 +101,6 @@ p {
 .btn-primary-auto:visited,
 .btn-primary-auto:focus,
 .btn-primary-auto:hover {
-    box-sizing: padding-box;
     border-radius:0;
     background-color: #ebebeb;
     color:#5A7BA0;
@@ -118,12 +129,11 @@ p {
 .btn-secondary,
 .btn-secondary-auto {
     background-color: #102538;
+    border:0;
     border-radius:0;
-    box-sizing: content-box;
     color: #CCCDD2 !important;
     padding: .2em .8em;
-    margin: .5em;
-    min-width:100px;
+    min-width:50px;
     font-size:16pt;
     font-style:italic;
     text-align:center;
@@ -145,10 +155,8 @@ p {
 .btn-secondary-auto:visited,
 .btn-secondary-auto:focus,
 .btn-secondary-auto:hover {
-    box-sizing: padding-box;
     border-radius:0;
     background-color: #263A50;
-    color:#5A7BA0;
     font-weight:700;
     outline:3px solid #5A7BA0;
     padding: .25em .85em;
