@@ -31,14 +31,18 @@ label:active  {
 
 input[type=text] {
     width:100% !important;
+    color:#ffffff;
 
 }
 
 p {
     font-size:12pt;
-    padding:1em;
+    padding:.5em;
 }
 
+.user-account {
+    margin:.5em 2em;
+}
 .header {
     display:inline-block;
 }
@@ -204,4 +208,17 @@ p {
     80% { left: 50%;}
     95% {left: 120%;}
     to {left: 100%;}
+}
+
+@-webkit-keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+@keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+.flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
 }
