@@ -1,27 +1,54 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 col-lg-4 col-xl-3 ">
-            <card-unit card-title="Wubalubadubdub">
+        <div class="col-xs-12 col-md-12 col-lg-6 ">
+            <card-unit card-title="ng-model">
+                <p>
+                    <\input ng-model="vm.favoriteHero"/\> <br /><br>
+                    In Angular 1, the ng-model directive binds a form control to a property in the controller associated with the template. This provides two-way binding whereby any changes made to the value in the view is synchronized with the model and any changes to the model are synchronized with the value in the view.
+                </p>
             </card-unit>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 ">
-            <card-unit card-title="Wubalubadubdub">
+        <div class="col-xs-12 col-md-12 col-lg-6">
+            <card-unit card-title="ngModel">
+                <p>
+                    \<input [(ngModel)]="favoriteHero" /\>
+                </p>
+                <p>
+                    In Angular 2, two-way binding is denoted with [()], descriptively referred to as a "banana in a box". This syntax is a short-cut for defining both property binding (from the component to the view) and event binding (from the view to the component), thereby giving us two-way binding.
+                </p>
             </card-unit>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 ">
-            <card-unit card-title="Wubalubadubdub">
+        <div class="col-xs-12 col-md-12 col-lg-6">
+            <card-unit card-title="ng-repeat">
+                <p>
+                    < tr ng-repeat="movie in vm.movies"\>
+                </p>
+                <p>
+                    In Angular 1, the ng-repeat directive repeats the associated DOM element for each item from the specified collection.
+
+                    In this example, the table row (tr) element is repeated for each movie object in the collection of movies.
+                </p>
             </card-unit>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-3  ">
-            <card-unit card-title="Wubalubadubdub">
+        <div class="col-xs-12 col-md-12 col-lg-6">
+            <card-unit card-title="*ngFor">
+                <p>
+                    < tr *ngFor="let movie of movies">
+                    The *ngFor directive in Angular 2 is similar to the ng-repeat directive in Angular 1. It repeats the associated DOM element for each item from the specified collection. More accurately, it turns the defined element (tr in this example) and its contents into a template and uses that template to instantiate a view for each item in the list.
+
+                    Notice the other syntax differences: The (*) before ngFor is required; the let keyword identifies movie as an input variable; the list preposition is of, not in.
+                </p>
             </card-unit>
         </div>
 
-        <div class="col-md-6 col-lg-4 col-xl-3  ">
+        <div class="col-xs-12 col-md-12 col-lg-6 ">
             <card-unit card-title="Wubalubadubdub">
+                <p>
+
+                </p>
             </card-unit>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-3  ">
+        <div class="col-xs-12 col-md-12 col-lg-6">
             <card-unit card-title="Wubalubadubdub">
             </card-unit>
         </div>
