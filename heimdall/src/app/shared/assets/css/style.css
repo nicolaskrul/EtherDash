@@ -40,6 +40,10 @@ p {
     padding:.5em;
 }
 
+.para {
+    font-size:12pt;
+    padding:.3em;
+}
 .user-account {
     margin:.5em 2em;
 }

@@ -4,12 +4,14 @@ import {LandingspageComponent} from './landingspage/landingspage.component';
 import {ProfileComponent} from './profile/profile.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
+import {DemoComponent} from './demo/demo.component';
 
 const routes: RouterConfig = [
   { path: 'profile', component: ProfileComponent },
   { path: 'landingspage', component: LandingspageComponent },
   {path: 'global', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'demo', component: DemoComponent},
   { path: '**', component: LandingspageComponent}
   ];
 
