@@ -1,6 +1,6 @@
 import {AuthService} from './auth.service';
 import {Anonymous} from './UserTypes.class';
-import {CardUnitComponent} from '../tools/card-unit/card-unit.component';
+import {CardUnitComponent} from '../tools/card-tools/card-unit/card-unit.component';
 import {Component} from '@angular/core';
 
 @Component({
