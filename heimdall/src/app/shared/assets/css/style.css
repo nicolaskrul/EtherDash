@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background-color: #08121C;
+    background-color: #00080F;
     color: #BBC4CF;
     font-family: 'Rajdhani', sans-serif;
 
@@ -77,15 +77,15 @@ p {
 .form-control:active {
     background-color: #263A50;
     border:1px solid #5A7BA0;
+    color: #ffffff;
 }
-
 
 .btn-primary,
 .btn-primary-auto {
     background-color: #CCCDD2;
     border:0;
     border-radius:0;
-    color: #102538 !important;
+    color: #102538;
     padding: .2em .8em;
     min-width:50px;
     font-size:16pt;
@@ -110,11 +110,10 @@ p {
 .btn-primary-auto:focus,
 .btn-primary-auto:hover {
     border-radius:0;
-    background-color: #ebebeb;
-    color:#5A7BA0;
+    background-color: #5A7BA0;
+    color:#ffffff;
     font-weight:700;
-    outline:3px solid #5A7BA0;
-    padding: .25em .85em;
+
     -webkit-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.75);
@@ -126,7 +125,7 @@ p {
 .btn-primary:active,
 .btn-primary-auto:active {
     background-color: #08121C !important;
-    color: #CCCDD2 !important;
+    color: #CCCDD2;
     outline:3px solid #CCCDD2;
     -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
     -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);

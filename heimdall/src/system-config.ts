@@ -46,6 +46,7 @@ const barrels: string[] = [
   'app/demo',
   'app/tools/card-tools/card-panel',
   'app/tools/checklist',
+  'app/tools/todo-item',
   /** @cli-barrel */
 ];
 

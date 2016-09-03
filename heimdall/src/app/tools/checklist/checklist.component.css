@@ -1,0 +1,31 @@
+input.form-control {
+    font-size:18px;
+    color:#ffffff;
+    background-color: #00080F !important;
+
+
+}
+
+.tree-line-ver {
+    position:absolute;
+    margin-top:14px;
+    width:10px;
+    outline: 2px solid #7D9DC1;
+    margin-left:-20px;
+}
+
+.btn-input {
+    border-radius:0;
+    font-size:24px;
+    padding:0;
+    margin:0;
+    width:32px;
+    color:#ffffff;
+    background-color: #263A50;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #ffffff !important;
+    color:#cacaca !important;
+}

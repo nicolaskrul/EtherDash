@@ -1,20 +1,30 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import TodoStorage from './TodoStorage';
+import TodoItem from './TodoItemModel';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-checklist',
+  selector: 'checklist',
   templateUrl: 'checklist.component.html',
-  styleUrls: ['checklist.component.css']
+  styleUrls: ['checklist.component.css'],
+  providers: [TodoStorage]
 })
-export class ChecklistComponent implements OnInit {
-    @Input('list-title') listTitle:string;
 
-    public title;
+export class ChecklistComponent {
+    newItem = '';
+    checklistStorage: TodoStorage;
 
-    ngOnInit() {
-        this.title = this.listTitle;
+    constructor(checklistStorage: TodoStorage) {
+        this.checklistStorage = checklistStorage;
+    }
 
-    };
+    addItem() {
+        this.checklistStorage.addItem(this.newItem);
+        this.newItem = '';
+    }
 
+    completeTask(index:number) {
+        this.checklistStorage.setCompletedState(index);
+    }
 
 }

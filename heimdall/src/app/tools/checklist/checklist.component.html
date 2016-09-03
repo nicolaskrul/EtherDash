@@ -1,3 +1,19 @@
-<p>
-  checklist works!
-</p>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="todo-list">
+            <div *ngFor="let item of checklistStorage.items; let i = index;">
+                <div class="input-group">
+                    <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="What needs to be done?"
+                    [(ngModel)]="item.text" (keyup.enter)="addItem()">
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-input" (click)="completeTask(i)">v</button>
+                    </span>
+                    <!-- <span class="input-group-btn" *ngIf="i === checklistStorage.length - 1">
+                        <button class="btn btn-input" (click)="addTask()">+</button>
+                    </span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

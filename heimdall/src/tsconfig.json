@@ -60,6 +60,8 @@
     "app/tools/checklist/checklist.component.spec.ts",
     "app/tools/checklist/checklist.component.ts",
     "app/tools/checklist/index.ts",
+    "app/tools/checklist/TodoItemModel.ts",
+    "app/tools/checklist/TodoStorage.ts",
     "main.ts",
     "system-config.ts",
     "typings.d.ts"
