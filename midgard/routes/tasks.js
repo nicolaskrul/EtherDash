@@ -1,18 +1,35 @@
 var express = require('express');
 var router = express.Router();
+
 var Task = require('../models/tasks/task.Schema.ts');
 
+// sends all tasks
 router.get('/all', function(req, res) {
-    // var Task = new Task;
     Task.find('Tasks', {}, function(err, tasks) {
         if (err) {
             res.send(err);
         } else {
             res.json(tasks);
-            console.log('Res: ' + JSON.stringify(tasks));
         }
 
     });
+
+});
+
+
+// creates new task in db
+router.post('/', function(req, res) {
+    Task.create({
+        text: req.body.text,
+        completed: req.body.completed
+        }, function(err, tasks) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(tasks);
+            }
+
+        });
 
 });
 

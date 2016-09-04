@@ -12,7 +12,7 @@ import TodoItem from './TodoItemModel';
 })
 
 export class ChecklistComponent implements OnInit{
-    newItem = '';
+    newItem = new TodoItem;
     public checklistTasks: TodoItem[] = [];
 
     constructor(private clService:ChecklistService) {}
@@ -33,7 +33,6 @@ export class ChecklistComponent implements OnInit{
                     console.log(this.checklistTasks[0].text);
                 },
                 error => {
-                    this.checklistTasks = new Array<TodoItem>();
                     console.error('Error: ' + error);
                 });
 
@@ -41,6 +40,28 @@ export class ChecklistComponent implements OnInit{
     // addItem() {
     //     this.checklistTasks.addItem(this.newItem);
     //     this.newItem = '';
+    // }
+
+    sendTask(newItem:TodoItem) {
+        this.clService.postTask(newItem)
+            .subscribe(
+                data => {
+                    console.log("returned data: ", data);
+                },
+                error => {
+                    console.error('Error: ' + error);
+                });
+    }
+
+    addTask(newItem: TodoItem) {
+      this.checklistTasks.push(newItem);
+      this.sendTask(newItem);
+      this.newItem = new TodoItem;
+
+    }
+
+    // setTaskCompleted(index: number){
+    //     this.items[index].completed = true;
     // }
     //
     // completeTask(index:number) {

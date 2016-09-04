@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response} from '@angular/http';
+import { Http, Headers, RequestOptions, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -31,6 +31,7 @@ export class ChecklistService {
         return Observable.throw(errMsg);
     }
 
+    // get all objects from collection
     getTasks(): Observable<TodoItem[]> {
         let taskUrl = hGlobals.DOMAIN_URL + 'tasks/all'
         var headers = new Headers();
@@ -41,13 +42,20 @@ export class ChecklistService {
                     // console.log("res json", res.json());
                     return res.json();
                 })
-                .catch(this.handleError);;
+                .catch(this.handleError);
     }
 
-
-//   // addTask() {
-//   //   return this.http.post('api/tasks')
-//   //     .map(response => response.json());
-//   // }
-// }
+    // Add single objects from collection
+    postTask(_taskList): Observable<TodoItem[]>  {
+        let taskUrl = hGlobals.DOMAIN_URL + 'tasks/'
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+        let body = JSON.stringify(_taskList);
+        return this.http
+            .post(taskUrl, body, options)
+            .map(res => {
+                return res.json()
+            })
+            .catch(this.handleError);
+    }
 }

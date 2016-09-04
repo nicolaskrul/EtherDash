@@ -33,12 +33,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Config CORS headers
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
+// Add api specific route configurations
 app.use('/', routes);
 app.use('/users', users);
 app.use('/tasks', tasksRouter);
@@ -50,14 +53,17 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+
+// Connect with MongoDB server
 mongoose.connect('mongodb://localhost/asgard');
 console.log('-!- MongoDB connection established')
 
-
+// Base route
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
+// Start server
 app.listen(3000, function () {
   console.log('' + motd);
   var host = this.address().address;
@@ -65,8 +71,9 @@ app.listen(3000, function () {
   console.log('-!- Domain:' + '\n' + '-!- ' + 'http://' + JSON.stringify(host) + ':' + port + '\n')
   console.log('-!- Status:' + '\n' +'=======' );
 });
-// error handlers
 
+// error handlers
+// 
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
