@@ -29,9 +29,7 @@ export default class TodoStorage {
       });
     }
 
-    setCompletedState(index: number){
-        console.log(this.items);
-        console.log(index);
+    setTaskCompleted(index: number){
         this.items[index].completed = true;
     }
 }

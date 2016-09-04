@@ -24,7 +24,7 @@ export class ChecklistComponent {
     }
 
     completeTask(index:number) {
-        this.checklistStorage.setCompletedState(index);
+        this.checklistStorage.setTaskCompleted(index);
     }
 
 }

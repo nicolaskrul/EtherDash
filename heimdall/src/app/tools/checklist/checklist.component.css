@@ -6,6 +6,19 @@ input.form-control {
 
 }
 
+input.form-control:active,
+input.form-control.active {
+    border:hidden;
+    outline: none;
+    box-sizing:border-box;
+}
+input.form-control:focus,
+input.form-control.focus  {
+    outline:0!important;
+    border:0 !important;
+    border-bottom:1px dashed #7D9DC1 !important;
+}
+
 .tree-line-ver {
     position:absolute;
     margin-top:14px;

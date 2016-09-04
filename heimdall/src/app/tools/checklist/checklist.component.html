@@ -4,10 +4,13 @@
             <div *ngFor="let item of checklistStorage.items; let i = index;">
                 <div class="input-group">
                     <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="What needs to be done?"
-                    [(ngModel)]="item.text" (keyup.enter)="addItem()">
+                    [(ngModel)]="item.text" (keyup.enter)="addItem()" [disabled]="item.completed">
 
-                    <span class="input-group-btn">
+                    <span class="input-group-btn" *ngIf="!item.completed">
                         <button class="btn btn-input" (click)="completeTask(i)">v</button>
+                    </span>
+                    <span class="input-group-btn" *ngIf="item.completed">
+                        <button class="btn btn-input" (click)="completeTask(i)">!</button>
                     </span>
                     <!-- <span class="input-group-btn" *ngIf="i === checklistStorage.length - 1">
                         <button class="btn btn-input" (click)="addTask()">+</button>
