@@ -4,7 +4,7 @@
             <div *ngFor="let item of checklistTasks; let i = index;">
                 <div class="input-group">
                     <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="What needs to be done?"
-                    [(ngModel)]="item.text" (keyup.enter)="addItem()" [disabled]="item.completed">
+                    [(ngModel)]="item.text" [disabled]="item.completed">
 
                     <span class="input-group-btn" *ngIf="!item.completed">
                         <button class="btn btn-input" (click)="completeTask(i)">v</button>

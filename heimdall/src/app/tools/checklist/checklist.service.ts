@@ -46,14 +46,28 @@ export class ChecklistService {
     }
 
     // Add single objects from collection
-    postTask(_taskList): Observable<TodoItem[]>  {
+    postTask(_task:TodoItem): Observable<TodoItem[]>  {
         let taskUrl = hGlobals.DOMAIN_URL + 'tasks/'
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
-        let body = JSON.stringify(_taskList);
+        let body = JSON.stringify(_task);
         return this.http
             .post(taskUrl, body, options)
             .map(res => {
+                return res.json()
+            })
+            .catch(this.handleError);
+    }
+
+    updateTask(_task:TodoItem): Observable<TodoItem>  {
+        let taskUrl = hGlobals.DOMAIN_URL + 'tasks/'
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+        let body = JSON.stringify(_task);
+        return this.http
+            .put(taskUrl, body, options)
+            .map(res => {
+                console.log(res);
                 return res.json()
             })
             .catch(this.handleError);

@@ -1,6 +1,7 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input, OnInit, AfterContentInit } from '@angular/core';
 import {ChecklistService} from './checklist.service';
 import TodoItem from './TodoItemModel';
+import { REACTIVE_FORM_DIRECTIVES, FormBuilder,FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -12,16 +13,35 @@ import TodoItem from './TodoItemModel';
 })
 
 export class ChecklistComponent implements OnInit{
+    @Input() todo:TodoItem;
     newItem = new TodoItem;
     public checklistTasks: TodoItem[] = [];
 
-    constructor(private clService:ChecklistService) {}
+    constructor(private clService:ChecklistService) {
+    }
+
+    // ngOnChanges(changes:any):void {
+    //    var taskChange: TodoItem = changes.todo;
+    //    if (taskChange) {
+    //         this.clService.updateTask(taskChange);
+    //    }
+    //  }
 
     ngOnInit() {
         this.checklistTasks = [];
         this.getAllTasks();
-        console.log("showme:", this.checklistTasks);
-    }
+        // this.checklistTasks
+        // .subscribe(
+        //     data => {
+        //         this.clService.updateTask(data)
+        //     },
+        //     error => {
+        //         error => {
+        //             console.error('Error: ' + error);
+        //         }
+        //     })
+
+    };
 
     getAllTasks(){
         this.clService.getTasks()
@@ -37,10 +57,6 @@ export class ChecklistComponent implements OnInit{
                 });
 
     }
-    // addItem() {
-    //     this.checklistTasks.addItem(this.newItem);
-    //     this.newItem = '';
-    // }
 
     sendTask(newItem:TodoItem) {
         this.clService.postTask(newItem)
@@ -54,18 +70,30 @@ export class ChecklistComponent implements OnInit{
     }
 
     addTask(newItem: TodoItem) {
-      this.checklistTasks.push(newItem);
-      this.sendTask(newItem);
-      this.newItem = new TodoItem;
-
+        newItem.completed = false;
+        this.checklistTasks.push(newItem);
+        this.sendTask(newItem);
+        this.newItem = new TodoItem;
     }
 
-    // setTaskCompleted(index: number){
-    //     this.items[index].completed = true;
-    // }
+    updateTask(updatedItem: TodoItem) {
+        this.clService.updateTask(updatedItem);
+    }
+
+    completeTask(index: number){
+        console.log(index);
+        this.checklistTasks[index].completed = true;
+        this.clService.updateTask(this.checklistTasks[index])
+            .subscribe(
+                data => {
+                    console.log("returned data: ", data);
+                },
+                error => {
+                    console.error('Error: ' + error);
+                });
     //
     // completeTask(index:number) {
     //     this.checklistTasks.setTaskCompleted(index);
     // }
-
+    }
 }

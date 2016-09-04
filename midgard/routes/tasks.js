@@ -33,18 +33,32 @@ router.post('/', function(req, res) {
 
 });
 
+// updates task in db
+router.put('/', function(req, res) {
+    var query = { '_id' : req.body._id};
+    console.log("Checking if " + req.body._id + " exists")
+    Task.findOne(query, function (err,doc){
+        if(err) return res.status(500).send(err)
+        if (!doc){
+            console.log(req.body._id + " not found!")
+            var newdoc = new Task(req.body);
+            newdoc.save(function(err){
+                if(err) return res.status(500).send(err)
+                return res.status(200).send({_id: newdoc._id})
+            })
+
+            return res.status(200).send('blal')
+        } else {
+            console.log(req.body._id + " found!")
+            for (var id in req.body ){
+                doc[id]= req.body[id];
+            }
+            doc.save( function(err){
+                if(err) return res.status(500).send(err)
+                return res.status(200).send({_id: doc._id})
+            })
+        }
+    });
+});
+
 module.exports = router;
-
-
-// // create a new user
-// var newTask = Task({
-//   text: 'Peter Quill',
-//   completed: false
-// });
-//
-// // save the user
-// newTask.save(function(err) {
-//   if (err) throw err;
-//
-//   console.log('User created!');
-// });
