@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="todo-list">
-            <div *ngFor="let item of checklistStorage.items; let i = index;">
+            <div *ngFor="let item of checklistStorage; let i = index;">
                 <div class="input-group">
                     <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="What needs to be done?"
                     [(ngModel)]="item.text" (keyup.enter)="addItem()" [disabled]="item.completed">

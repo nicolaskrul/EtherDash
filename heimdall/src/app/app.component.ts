@@ -14,7 +14,9 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 })
 export class Dashboard {
 
-    constructor(private _service:AuthService){}
+    constructor(private _service:AuthService){
+
+    }
 
     logout(){
         this._service.logout();
