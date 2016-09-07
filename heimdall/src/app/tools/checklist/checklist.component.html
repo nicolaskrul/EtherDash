@@ -7,11 +7,15 @@
                     [(ngModel)]="item.text" [disabled]="item.completed">
 
                     <span class="input-group-btn" *ngIf="!item.completed">
-                        <button class="btn btn-input" (click)="completeTask(i)">v</button>
+                        <button class="btn btn-input" (click)="completeTask(i)"><span class="fa fa-check" aria-hidden="true"></span></button>
                     </span>
                     <span class="input-group-btn" *ngIf="item.completed">
-                        <button class="btn btn-input" (click)="completeTask(i)">!</button>
+                        <button class="btn btn-input" (click)="completeTask(i)"><span class="fa fa-undo" aria-hidden="true"></span></button>
                     </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-input bg-danger" (click)="deleteTask(i)"><span class="fa fa-trash" aria-hidden="true"></span></button>
+                    </span>
+
 
                 </div>
             </div>

@@ -72,4 +72,18 @@ export class ChecklistService {
             })
             .catch(this.handleError);
     }
+
+    deleteTask(_task: TodoItem): Observable<TodoItem> {
+        console.log("Service task: ", _task)
+        let taskUrl = hGlobals.DOMAIN_URL + 'tasks/' + _task._id;
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+        return this.http
+            .delete(taskUrl, options)
+            .map(res => {
+                console.log("res:", res);
+                return res.json()
+            })
+            .catch(this.handleError);
+    }
 }

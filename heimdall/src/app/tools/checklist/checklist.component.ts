@@ -77,12 +77,20 @@ export class ChecklistComponent implements OnInit{
     }
 
     updateTask(updatedItem: TodoItem) {
-        this.clService.updateTask(updatedItem);
-    }
+        this.clService.updateTask(updatedItem)
+        .subscribe(
+            data => {
+                console.log("returned data: ", data);
+            },
+            error => {
+                console.error('Error: ' + error);
+            });
+        }
+
 
     completeTask(index: number){
         console.log(index);
-        this.checklistTasks[index].completed = true;
+        this.checklistTasks[index].completed = !this.checklistTasks[index].completed;
         this.clService.updateTask(this.checklistTasks[index])
             .subscribe(
                 data => {
@@ -91,9 +99,22 @@ export class ChecklistComponent implements OnInit{
                 error => {
                     console.error('Error: ' + error);
                 });
-    //
+            }
+
+    deleteTask(index: number){
+        console.log(index);
+        this.clService.deleteTask(this.checklistTasks[index])
+            .subscribe(
+                data => {
+                    console.log("returned data: ", data);
+                    this.getAllTasks();
+                },
+                error => {
+                    console.error('Error: ' + error);
+                });
+            }
     // completeTask(index:number) {
     //     this.checklistTasks.setTaskCompleted(index);
     // }
-    }
+
 }
