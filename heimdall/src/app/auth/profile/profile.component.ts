@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CardUnitComponent} from '../tools/card-tools/card-unit/card-unit.component';
+import {CardUnitComponent} from '../../tools/card-tools/card-unit/card-unit.component';
 
 @Component({
   moduleId: module.id,

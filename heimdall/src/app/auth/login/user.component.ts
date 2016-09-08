@@ -1,8 +1,8 @@
 export class User {
-    private _id:string;
-    private username: string;
-    private email:string;
-    private password:string;
+    public _id:string;
+    public username: string;
+    public email:string;
+    public password:string;
 
     constructor(id:string, username:string, email:string, password:string) {
         this._id = id;
@@ -14,8 +14,8 @@ export class User {
 }
 
 export class Anonymous {
-    private username: string;
-    private password:string;
+    public username: string;
+    public password:string;
 
     constructor(username:string, password:string) {
         this.username = username;

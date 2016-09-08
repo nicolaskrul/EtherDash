@@ -40,7 +40,7 @@ router.put('/', function(req, res) {
         if (!doc){
             console.log(req.body._id + " not found!")
             var newdoc = new Task(req.body);
-            newdoc.save(function(err){
+            newdoc.update(function(err){
                 if(err) return res.status(500).send(err)
                 return res.status(200).send({_id: newdoc._id})
             })

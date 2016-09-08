@@ -3,7 +3,7 @@ import {provideRouter, RouterConfig } from '@angular/router';
 import {LandingspageComponent} from './landingspage/landingspage.component';
 import {ProfileComponent} from './profile/profile.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './auth/login/login.component';
 import {DemoComponent} from './demo/demo.component';
 
 const routes: RouterConfig = [

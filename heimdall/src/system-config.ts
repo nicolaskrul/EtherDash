@@ -47,6 +47,8 @@ const barrels: string[] = [
   'app/tools/card-tools/card-panel',
   'app/tools/checklist',
   'app/tools/todo-item',
+  'app/auth/register',
+  'app/auth/usercontrol',
   /** @cli-barrel */
 ];
 

@@ -1,6 +1,6 @@
-import {AuthService} from './auth.service';
-import {Anonymous} from './UserTypes.class';
-import {CardUnitComponent} from '../tools/card-tools/card-unit/card-unit.component';
+import {AuthService} from '../auth.service';
+import {User} from '../UserTypes.class';
+import {CardUnitComponent} from '../../tools/card-tools/card-unit/card-unit.component';
 import {Component} from '@angular/core';
 
 @Component({
@@ -13,7 +13,7 @@ import {Component} from '@angular/core';
 })
 export class LoginComponent{
 
-    public user = new Anonymous('','');
+    public user = new User('','','','');
     public errorMsg = '';
 
     constructor(
