@@ -28,11 +28,11 @@ router.post('/:id', function(req, res) {
     Task.findOne(query, function (err,doc){
         if(err) return res.status(500).send(err)
         if (!doc){
-            console.log(req.body..username + " not found!")
+            console.log(req.body.username + " not found!")
             var newdoc = new Task(req.body);
             newdoc.save(function(err){
                 if(err) return res.status(500).send(err)
-                return res.status(200).send({_id: newdoc..username})
+                return res.status(200).send({_id: newdoc.username})
             })
 
             return res.status(200).send('blal')

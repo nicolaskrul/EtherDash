@@ -1,6 +1,6 @@
-import { AuthService} from './login/auth.service';
+import { AuthService} from './auth/auth.service';
 import { Component } from '@angular/core';
-import { LoginComponent} from './login/login.component';
+import { LoginComponent} from './auth/login/login.component';
 import { MenuComponent} from './navigation/menu/menu.component';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
