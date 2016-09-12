@@ -5,25 +5,26 @@
                 <div class="input-group">
                     <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="What needs to be done?"
                     [(ngModel)]="item.text" [disabled]="item.completed">
+                    <div *ngFor="let sItem of i.sublist; let sI = index;">
+                        <div class="input-group sub-group">
+                            <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="Sublist item?"
+                            [(ngModel)]="item.text" [disabled]="item.completed">
+                        </div>
+                    </div>
 
-                    <span class="input-group-btn" *ngIf="!item.completed">
-                        <button class="btn btn-input" (click)="completeTask(i)"><span class="fa fa-check" aria-hidden="true"></span></button>
+                    <span class="btn-panel">
+                            <button class="btn btn-input" (click)="completeTask(i)" *ngIf="!item.completed"><span class="fa fa-check" aria-hidden="true"></span></button>
+                            <button class="btn btn-input" (click)="completeTask(i)" *ngIf="item.completed"><span class="fa fa-undo" aria-hidden="true"></span></button>
+                            <button class="btn btn-input" id="add-sublist" (click)="addSublist(newItem)"><span class="fa fa-list" aria-hidden="true"></span></button>
+                            <button class="btn btn-input danger" (click)="deleteTask(i)"><span class="fa fa-trash" aria-hidden="true"></span></button>
                     </span>
-                    <span class="input-group-btn" *ngIf="item.completed">
-                        <button class="btn btn-input" (click)="completeTask(i)"><span class="fa fa-undo" aria-hidden="true"></span></button>
-                    </span>
-                    <span class="input-group-btn">
-                        <button class="btn btn-input bg-danger" (click)="deleteTask(i)"><span class="fa fa-trash" aria-hidden="true"></span></button>
-                    </span>
-
-
                 </div>
             </div>
             <div class="input-group">
                 <input class="form-control" [ngClass]="{'completed': newItem.completed}" placeholder="What needs to be done?"
                 [(ngModel)]="newItem.text" (keyup.enter)="addTask(newItem)" [disabled]="newItem.completed">
                 <span class="input-group-btn">
-                    <button class="btn btn-input" (click)="addTask(newItem)">+</button>
+                    <button class="btn btn-input" id="add-task" (click)="addTask(newItem)">+</button>
                 </span>
             </div>
         </div>

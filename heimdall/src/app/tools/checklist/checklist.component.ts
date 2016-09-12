@@ -20,27 +20,9 @@ export class ChecklistComponent implements OnInit{
     constructor(private clService:ChecklistService) {
     }
 
-    // ngOnChanges(changes:any):void {
-    //    var taskChange: TodoItem = changes.todo;
-    //    if (taskChange) {
-    //         this.clService.updateTask(taskChange);
-    //    }
-    //  }
-
     ngOnInit() {
         this.checklistTasks = [];
         this.getAllTasks();
-        // this.checklistTasks
-        // .subscribe(
-        //     data => {
-        //         this.clService.updateTask(data)
-        //     },
-        //     error => {
-        //         error => {
-        //             console.error('Error: ' + error);
-        //         }
-        //     })
-
     };
 
     getAllTasks(){
@@ -76,7 +58,17 @@ export class ChecklistComponent implements OnInit{
         this.newItem = new TodoItem;
     }
 
+    addSublist(_item: TodoItem) {
+        let subitem = new TodoItem;
+        console.log("parent item: ", _item);
+        console.log("subitem: ", subitem);
+        _item.sublist.push(subitem);
+        console.log("new parent item: ", _item);
+        this.updateTask(_item);
+    }
+
     updateTask(updatedItem: TodoItem) {
+        console.log("updatedItem: ", updatedItem);
         this.clService.updateTask(updatedItem)
         .subscribe(
             data => {
@@ -85,10 +77,10 @@ export class ChecklistComponent implements OnInit{
             error => {
                 console.error('Error: ' + error);
             });
-        }
+    }
 
 
-    completeTask(index: number){
+    completeTask(index: number) {
         console.log(index);
         this.checklistTasks[index].completed = !this.checklistTasks[index].completed;
         this.clService.updateTask(this.checklistTasks[index])
@@ -101,7 +93,7 @@ export class ChecklistComponent implements OnInit{
                 });
             }
 
-    deleteTask(index: number){
+    deleteTask(index: number) {
         console.log(index);
         this.clService.deleteTask(this.checklistTasks[index])
             .subscribe(

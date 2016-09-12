@@ -1,3 +1,4 @@
+const debug = require('debug')('my-namespace')
 var express = require('express');
 var path = require('path');
 // var favicon = require('serve-favicon');
@@ -33,34 +34,33 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Config CORS headers
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+
 
 // Add api specific route configurations
 app.use('/', routes);
 app.use('/users', users);
 app.use('/tasks', tasksRouter);
 
+// Connect with MongoDB server
+mongoose.connect('mongodb://localhost/asgard');
+console.log('-!- MongoDB connection established')
+// Config CORS headers
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE', 'OPTIONS');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Methods");
+  next();
+});
+// Base route
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
-});
-
-
-// Connect with MongoDB server
-mongoose.connect('mongodb://localhost/asgard');
-console.log('-!- MongoDB connection established')
-
-// Base route
-app.get('/', function (req, res) {
-  res.send('Hello World!');
 });
 
 // Start server
@@ -73,7 +73,7 @@ app.listen(3000, function () {
 });
 
 // error handlers
-// 
+//
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {

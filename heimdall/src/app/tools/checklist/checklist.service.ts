@@ -61,11 +61,22 @@ export class ChecklistService {
 
     updateTask(_task:TodoItem): Observable<TodoItem>  {
         let taskUrl = hGlobals.DOMAIN_URL + 'tasks/'
-        let headers = new Headers({'Content-Type': 'application/json'});
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        // 'Access-Control-Request-Method': 'PUT',
+        // headers.append('Access-Control-Request-Method', 'PUT');
+        headers.append('Access-Control-Allow-Origin','*');
+
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify(_task);
+        console.log("body: ", body);
         return this.http
-            .put(taskUrl, body, options)
+            .put(taskUrl, body, {
+                headers: headers
+            })
+            // .put(taskUrl, body, options)
+            // .put(taskUrl, body)
+            // .put(taskUrl, _task)
             .map(res => {
                 console.log(res);
                 return res.json()

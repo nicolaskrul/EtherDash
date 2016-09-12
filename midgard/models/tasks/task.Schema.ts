@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 // create a schema
 var taskSchema = new Schema({
     text:String,
-    completed:Boolean
+    completed:Boolean,
+    sublist: Array
 
 },
 {

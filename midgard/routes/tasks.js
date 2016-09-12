@@ -34,7 +34,7 @@ router.post('/', function(req, res) {
 // updates task in db
 router.put('/', function(req, res) {
     var query = { '_id' : req.body._id};
-    console.log("Checking if " + req.body._id + " exists")
+    console.log("Checking if " + JSON.stringify(req.body) + " exists")
     Task.findOne(query, function (err,doc){
         if(err) return res.status(500).send(err)
         if (!doc){

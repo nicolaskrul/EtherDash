@@ -1,8 +1,15 @@
+#add-task {
+    background-color: #B48557;
+}
+
+#add-sublist {
+    background-color: #B48557;
+}
 input.form-control {
     font-size:18px;
     color:#ffffff;
     background-color: #1B4052 !important;
-
+    height:30px;
 
 }
 
@@ -19,7 +26,7 @@ input.form-control.focus  {
     border-bottom:1px dashed #7D9DC1 !important;
 }
 
-.tree-line-ver {
+.line-vertical {
     position:absolute;
     margin-top:14px;
     width:10px;
@@ -27,18 +34,60 @@ input.form-control.focus  {
     margin-left:-20px;
 }
 
+.line-horizontal {
+    position:absolute;
+    margin-top:14px;
+    width:10px;
+    outline: 2px solid #7D9DC1;
+    margin-left:-20px;
+}
+
+.btn-panel {
+    pointer-events: auto;
+    display:inline-block;
+    position:absolute;
+    height:30px;
+    right:0;
+    width:100%;
+    z-index:10;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+}
+
+.btn-panel:hover, .btn-panel.hover {
+    opacity: 0.9;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+}
+
 .btn-input {
     border-radius:0;
+    border:0;
     font-size:24px;
     padding:0;
-    margin:0;
-    width:32px;
+    margin:1px;
+    width:28px;
+    height:28px;
+    text-align: center;
+    float:right;
     color:#ffffff;
-    background-color: #263A50;
+    background-color: #5BB3BC;
+}
+
+.sub-group {
+    width:66%;
 }
 
 .completed {
     text-decoration: line-through;
     color: #ffffff !important;
     color:#cacaca !important;
+}
+
+.danger {
+    background-color: #AC2220;
+    color:#ffffff;
 }

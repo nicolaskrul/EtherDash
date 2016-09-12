@@ -13,7 +13,11 @@
 .card-container{
     padding:.5em;
     width:auto;
-
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+         -o-animation: fadein 0.5s; /* Opera < 12.1 */
+            animation: fadein 0.5s;
 }
 
 .card-titlebar{
@@ -34,6 +38,6 @@
 
 .card-para{
 
-    border: 1px solid #242424;
+    
     padding:0.7em;
 }
