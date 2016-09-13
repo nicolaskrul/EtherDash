@@ -83,4 +83,27 @@ router.delete('/:id', function(req, res, next) {
     });
 });
 
+router.delete('/sublist/:id', function(req, res, next) {
+    var query = { '_id' : req.params.id.toString()};
+    console.log("Router req:  " + JSON.stringify(req.body) + " exists")
+    console.log("query " + query + " exists")
+    Task.findOne(query, function (err,doc){
+        if(err) return res.status(500).send(err)
+        if (!doc){
+            console.log(req + " not found!")
+
+
+            return res.status(200).send('blal')
+        } else {
+            console.log(req + " found!")
+            for (var id in req.body ){
+                doc[id]= req.body[id];
+            }
+            doc.remove( function(err){
+                if(err) return res.status(500).send(err)
+                return res.status(200).send({_id: doc._id})
+            })
+        }
+    });
+});
 module.exports = router;

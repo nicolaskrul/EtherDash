@@ -60,6 +60,7 @@ export class ChecklistComponent implements OnInit{
 
     addSublist(_item: TodoItem) {
         let subitem = new TodoItem;
+        subitem._id = _item.sublist.length;
         console.log("parent item: ", _item);
         console.log("subitem: ", subitem);
         _item.sublist.push(subitem);
@@ -105,6 +106,25 @@ export class ChecklistComponent implements OnInit{
                     console.error('Error: ' + error);
                 });
             }
+
+deleteSublistItem(index: number, subIndex: number) {
+    var selectedTask = this.checklistTasks[index];
+
+    if (subIndex > -1) {
+       selectedTask.sublist.splice(subIndex, 1);
+}
+    // var editedTask = this.checklistTasks[index][subIndex].pop();
+    console.log(index);
+    this.clService.updateTask(selectedTask)
+        .subscribe(
+            data => {
+                console.log("returned data: ", data);
+                this.getAllTasks();
+            },
+            error => {
+                console.error('Error: ' + error);
+            });
+        }
     // completeTask(index:number) {
     //     this.checklistTasks.setTaskCompleted(index);
     // }

@@ -5,17 +5,22 @@
                 <div class="input-group">
                     <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="What needs to be done?"
                     [(ngModel)]="item.text" [disabled]="item.completed">
-                    <div *ngFor="let sItem of i.sublist; let sI = index;">
+                    <div *ngFor="let sItem of item.sublist; let sI = index;">
                         <div class="input-group sub-group">
                             <input class="form-control" [ngClass]="{'completed': item.completed}" placeholder="Sublist item?"
                             [(ngModel)]="item.text" [disabled]="item.completed">
+                            <span class="btn-panel">
+                                    <button class="btn btn-input" (click)="completeTask(i)" *ngIf="!item.completed"><span class="fa fa-check" aria-hidden="true"></span></button>
+                                    <button class="btn btn-input" (click)="completeTask(i)" *ngIf="item.completed"><span class="fa fa-undo" aria-hidden="true"></span></button>
+                                    <button class="btn btn-input danger" (click)="deleteSublistItem(i, sI)"><span class="fa fa-trash" aria-hidden="true"></span></button>
+                            </span>
                         </div>
                     </div>
 
                     <span class="btn-panel">
                             <button class="btn btn-input" (click)="completeTask(i)" *ngIf="!item.completed"><span class="fa fa-check" aria-hidden="true"></span></button>
                             <button class="btn btn-input" (click)="completeTask(i)" *ngIf="item.completed"><span class="fa fa-undo" aria-hidden="true"></span></button>
-                            <button class="btn btn-input" id="add-sublist" (click)="addSublist(newItem)"><span class="fa fa-list" aria-hidden="true"></span></button>
+                            <button class="btn btn-input" id="add-sublist" (click)="addSublist(item)"><span class="fa fa-list" aria-hidden="true"></span></button>
                             <button class="btn btn-input danger" (click)="deleteTask(i)"><span class="fa fa-trash" aria-hidden="true"></span></button>
                     </span>
                 </div>
