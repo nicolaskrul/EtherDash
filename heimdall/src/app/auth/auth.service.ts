@@ -31,7 +31,7 @@ export class AuthService {
     }
 
     login(_user:User): Observable<User[]>  {
-        let userUrl = hGlobals.DOMAIN_URL + 'user/'
+        let userUrl = hGlobals.DOMAIN_URL + 'login/'
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify(_user);

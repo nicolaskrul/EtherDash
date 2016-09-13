@@ -49,6 +49,9 @@ const barrels: string[] = [
   'app/tools/todo-item',
   'app/auth/register',
   'app/auth/usercontrol',
+  'app/tools/header-menu',
+  'app/tools/sidebar',
+  'app/tools/side-menu',
   /** @cli-barrel */
 ];
 

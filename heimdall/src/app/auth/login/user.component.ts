@@ -3,12 +3,14 @@ export class User {
     public username: string;
     public email:string;
     public password:string;
+    public userStorage:Object;
 
     constructor(id:string, username:string, email:string, password:string) {
         this._id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.userStorage = {};
     }
 
 }

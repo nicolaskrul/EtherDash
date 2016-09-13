@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var cors = require('cors');
+var passport = require('passport');
 
 
 var routes = require('./routes/index');
@@ -86,6 +87,9 @@ console.log('-!- MongoDB connection established')
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
+
+app.post('/login', passport.authenticate('local', { successRedirect: '/',
+                                                    failureRedirect: '/login' }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

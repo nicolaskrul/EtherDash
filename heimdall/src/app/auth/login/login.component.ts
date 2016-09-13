@@ -1,7 +1,7 @@
 import {AuthService} from '../auth.service';
 import {User} from '../UserTypes.class';
 import {CardUnitComponent} from '../../tools/card-tools/card-unit/card-unit.component';
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -12,8 +12,10 @@ import {Component} from '@angular/core';
   providers: [AuthService]
 })
 export class LoginComponent{
+    @Input('username') username : String;
+    @Input('password') password : String;
 
-    public user = new User('','','','');
+    public user = new User('','username','','password');
     public errorMsg = '';
 
     constructor(

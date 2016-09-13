@@ -3,11 +3,11 @@
 // import { By }           from '@angular/platform-browser';
 // import { DebugElement } from '@angular/core';
 // import { addProviders, async, inject } from '@angular/core/testing';
-// import { RegisterComponent } from './register.component';
+// import { HeaderMenuComponent } from './header-menu.component';
 //
-// describe('Component: Register', () => {
+// describe('Component: HeaderMenu', () => {
 //   it('should create an instance', () => {
-//     let component = new RegisterComponent();
+//     let component = new HeaderMenuComponent();
 //     expect(component).toBeTruthy();
 //   });
 // });
