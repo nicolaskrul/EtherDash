@@ -1,24 +1,36 @@
 #logo {
-    display:inline-block;
+    display:block;
     margin:0.7em 1em;
     color:#CCCDD2;
     font-size:14pt;
     font-weight:700;
     text-align:center;
     padding-left:1px;
-    float:left;
 }
 
 .side-menu {
-    height: 100%;
+    height:100vh;
     position: relative;
     margin: 0;
     width: 150px;
     display: flex;
+    text-align: center;
 
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+         -o-animation: fadein 0.5s; /* Opera < 12.1 */
+            animation: fadein 0.5s;
 }
 
 .menu-container{
-    width:100%;
-    display:inline-block;
+    position:absolute;
+    width:auto;
+    display:block;
+    top:33%;
+}
+
+a.nav-link {
+    height:90px;
+    width:90px;
 }
