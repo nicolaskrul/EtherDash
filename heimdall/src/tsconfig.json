@@ -51,7 +51,6 @@
     "app/environment.ts",
     "app/globals.ts",
     "app/index.ts",
-    "app/landing.routes.ts",
     "app/landingspage/index.ts",
     "app/landingspage/landingspage.component.spec.ts",
     "app/landingspage/landingspage.component.ts",

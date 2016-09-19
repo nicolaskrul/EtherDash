@@ -2,7 +2,7 @@
     display:block;
     margin:0.7em 1em;
     color:#CCCDD2;
-    font-size:14pt;
+    font-size:12pt;
     font-weight:700;
     text-align:center;
     padding-left:1px;
@@ -13,8 +13,9 @@
     position: relative;
     margin: 0;
     width: 150px;
-    display: flex;
-    text-align: center;
+    vertical-align: middle;
+
+
 
     -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 0.5s; /* Firefox < 16 */
@@ -33,4 +34,91 @@
 a.nav-link {
     height:90px;
     width:90px;
+}
+
+
+.sm-icon {
+    /*border: 1px solid #228DFF;*/
+    height:100px;
+    position:relative;
+    padding:2em 0.5em 0.5em;
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.sm-icon:hover .neon-glow,
+.sm-icon.hover .neon-glow {
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+
+.sm-circle-1,
+.sm-circle-2,
+.sm-circle-3,
+.sm-circle-4,
+.sm-circle-5,
+.sm-circle-6
+ {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 2em; right: 0;
+    border: 1px solid #228DFF;
+    border-radius:50%;
+    height:1em;
+    width:1em;
+    color: #228DFF;
+}
+
+.sm-circle-2 {
+    height:.3em;
+    width:.3em;
+}
+.sm-circle-2 {
+    height:.4em;
+    width:.4em;
+}
+.sm-circle-3 {
+    height:.6em;
+    width:.6em;
+}
+.sm-circle-4 {
+    height:1em;
+    width:1em;
+}
+.sm-circle-5 {
+    height:2em;
+    width:2em;
+}
+
+/*.sm-circle-1:hover,
+.sm-circle-2:hover,
+.sm-circle-3:hover,
+.sm-circle-4:hover,
+.sm-circle-5:hover,
+.sm-circle-6:hover {
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+}*/
+
+
+nav a {
+  font-size: 1.5em;
+  color: #228DFF;
+}
+
+/*.sm-icon:hover,
+.sm-icon.hover  {*/
+
+@-webkit-keyframes neon2 {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
 }
