@@ -23,39 +23,7 @@ require.extensions['.txt'] = function (module, filename) {
 };
 var motd = require('./motd.txt');
 
-// Add headers
-// app.use(function (req, res, next) {
-//
-//     // Website you wish to allow to connect
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//
-//     // Request methods you wish to allow
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS, PUT, PATCH, DELETE');
-//
-//     // Request headers you wish to allow
-//     res.setHeader('Access-Control-Allow-Headers', 'Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-//
-//     // Set to true if you need the website to include cookies in the requests sent
-//     // to the API (e.g. in case you use sessions)
-//     // res.setHeader('Access-Control-Allow-Credentials', true);
-//
-//     // Pass to next layer of middleware
-//     next();
-// });
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-//   res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, X-Requested-With, Content-Type, Accept");
-//   res.header("Access-Control-Max-Age", "1728000");
-//   res.header("Access-Control-Expose-Headers", "Cache-Control, Pragma, Origin, X-Requested-With, Content-Type, Accept");
-//   if (req.method === 'OPTIONS') {
-//     res.statusCode = 204;
-//     return res.end();
-//   } else {
-//     return next();
-//   }
-// });
 app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -78,7 +46,9 @@ app.use('/users', users);
 app.use('/tasks', tasksRouter);
 
 // Connect with MongoDB server
-mongoose.connect('mongodb://localhost/asgard');
+// mongoose.connect('mongodb://localhost/asgard');
+mongoose.connect('mongodb://ullr:zH76bBYxjVy4Qu9Vb2LC4xMf29eQNsKJT5N2Kto5z2e2U8gpPe2SoJYschAs4hhV@ds021346.mlab.com:21346/mimir');
+
 console.log('-!- MongoDB connection established')
 // Config CORS headers
 
