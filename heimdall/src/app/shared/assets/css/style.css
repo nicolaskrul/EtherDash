@@ -18,9 +18,10 @@ body {
     background: radial-gradient(ellipse at center, #153F4F 0%, #0B212C 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#153F4F', endColorstr='#0B212C',GradientType=1 ); /* ie6-9 */
     width: 100%;
-    heigth:100%;
+    height:100%;
     margin: auto;
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
 
 }
 

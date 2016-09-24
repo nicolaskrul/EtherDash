@@ -12,7 +12,7 @@
     height:100vh;
     position: relative;
     margin: 0;
-    width: 150px;
+    width: 60px;
     vertical-align: middle;
 
 
@@ -30,9 +30,14 @@
     display:block;
     top:33%;
 }
+.nav {
+  position:relative;
+  display: inline-block;
+  vertical-align: middle;
+}
 
 a.nav-link {
-    height:90px;
+    height:60px;
     width:90px;
 }
 
@@ -41,7 +46,7 @@ a.nav-link {
     /*border: 1px solid #228DFF;*/
     height:100px;
     position:relative;
-    padding:2em 0.5em 0.5em;
+    padding:1.2em 0.5em 0.2em;
     text-decoration: none;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -74,25 +79,25 @@ a.nav-link {
 }
 
 .sm-circle-2 {
-    height:.3em;
-    width:.3em;
+    height:1.3em;
+    width:1.3em;
 }
 .sm-circle-2 {
-    height:.4em;
-    width:.4em;
+    height:1.4em;
+    width:1.4em;
 }
 .sm-circle-3 {
-    height:.6em;
-    width:.6em;
+    height:1.6em;
+    width:1.6em;
 }
-.sm-circle-4 {
+/*.sm-circle-4 {
     height:1em;
     width:1em;
 }
 .sm-circle-5 {
     height:2em;
     width:2em;
-}
+}*/
 
 /*.sm-circle-1:hover,
 .sm-circle-2:hover,
@@ -107,7 +112,7 @@ a.nav-link {
 
 
 nav a {
-  font-size: 1.5em;
+  font-size: 1em;
   color: #228DFF;
 }
 

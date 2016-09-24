@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <radialGradient spreadMethod="pad" id="svg_3">
+   <stop offset="0" stop-opacity="0.996094" stop-color="#153f4f"/>
+   <stop offset="1" stop-opacity="0.996094" stop-color="#0b212c"/>
+  </radialGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" height="651.089455" width="651.089455" y="-61.463338" x="6.05007" stroke-width="5" stroke="#000000" fill="url(#svg_3)"/>
+ </g>
+</svg>
