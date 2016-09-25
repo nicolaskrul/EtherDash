@@ -6,7 +6,7 @@ import { Http, Headers, RequestOptions, Response} from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import hGlobals = require('..//globals');
+import hGlobals = require('../globals');
 
 // const  users = [
 //   new Anonymous('a','a'),
@@ -69,11 +69,13 @@ export class AuthService {
     }
 
     // Add single objects to collection
-    public postUser(_user:User): Observable<User[]>  {
-        let userUrl = hGlobals.DOMAIN_URL + 'users/'
+    public registerUser(_user:User): Observable<User[]>  {
+        let userUrl = hGlobals.DOMAIN_URL + 'users/user'
+        console.log("user url", userUrl);
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify(_user);
+        console.log('service')
         return this.http
             .post(userUrl, body, options)
             .map(res => {

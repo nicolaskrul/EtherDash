@@ -3,17 +3,18 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var userSchema = new Schema({
-    text:String,
-    completed:Boolean
+    email:String,
+    username:String,
+    password:String
 
 },
 {
-    collection: 'User'
+    collection: 'users'
 });
 
 // the schema is useless so far
 // we need to create a model using it
-var User = mongoose.model('User', taskSchema);
+var User = mongoose.model('User', userSchema);
 
 // make this available to our users in our Node applications
 module.exports = User;

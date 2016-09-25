@@ -38,7 +38,7 @@ export class UsercontrolComponent{
     }
 
     sendUser(_user:User) {
-      this._service.postUser(_user)
+      this._service.registerUser(_user)
           .subscribe(
               data => {
                   console.log("returned data: ", data);

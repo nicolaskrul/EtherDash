@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Task = require('../models/tasks/task.Schema.ts');
+var Task = require('../models/task.Schema.ts');
 
 // sends all tasks
 router.get('/all', function(req, res) {
