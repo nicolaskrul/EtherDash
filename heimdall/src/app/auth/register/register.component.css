@@ -1,0 +1,26 @@
+/*Because fuck bootstrap forms*/
+
+.form-group {
+    background-color: inherit;
+    margin:10px;
+
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+         -o-animation: fadein 0.5s; /* Opera < 12.1 */
+            animation: fadein 0.5s;
+}
+
+input.form-control,
+.form-control {
+    background-color: #1B4052;
+    border-radius:0;
+    color: #ffffff;
+}
+
+.form-control:focus,
+.form-control:active {
+    background-color: #1B4052;
+    border:1px solid #5A7BA0;
+    color: #ffffff;
+}

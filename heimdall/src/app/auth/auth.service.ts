@@ -68,7 +68,7 @@ export class AuthService {
                 .catch(this.handleError);
     }
 
-    // Add single objects from collection
+    // Add single objects to collection
     public postUser(_user:User): Observable<User[]>  {
         let userUrl = hGlobals.DOMAIN_URL + 'users/'
         let headers = new Headers({'Content-Type': 'application/json'});

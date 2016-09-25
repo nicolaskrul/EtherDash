@@ -11,6 +11,7 @@
 }
 
 .card-container{
+    opacity: 0.9;
     padding:.5em;
     width:auto;
     -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
@@ -38,6 +39,6 @@
 
 .card-para{
 
-    
+
     padding:0.7em;
 }
